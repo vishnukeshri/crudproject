@@ -1,0 +1,41 @@
+<%- include ('layout/header') %>
+<div class="container">
+    <div class="row">
+
+<div class="col-lg-12 mx-auto mt-4">
+    
+        <div class="card shadow">
+          
+            <div class="card-header bg-success">
+             
+              
+            </div>
+            <div class="card-body p-4">
+              <form action="/update/<%=Product._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                <div class=" mb-3 ">
+            <label for =" productname">ProductName</label>
+                    <input type="text" name="productname" class="form-control form-control-lg" placeholder="ProductName" value=<%=Product.name %> required/>
+                  </div>
+                </div>
+                <div class=" mb-3 p-4 ">
+                  <label for =" categoryname">CategoryName</label>
+                          <input type="text" name="categoryname" class="form-control form-control-lg" placeholder="CategoryName"value<%=Product.categoryname %> required/>
+                        </div>
+                <div class="mb-3 p-4">
+                    <label for ="categoryid">Categoryid</label>
+                  <input type="number" name="categoryid" class="form-control form-control-lg" placeholder="categoryid"value<%=Product.categoryid %> required/>
+                  <div class="invalid-feedback">Category required!</div>
+                  <div class="mb-3 p-4">
+                    <label for ="image" class="form-label" > Select Image</label>
+                <input class ="form-control form-control-lg " type ="file" name="image" required/>
+  <img src="/"<%=Product.image%> width="100" class = "img-thumbnail mt-1">
+                </div>    
+                <input type="hidden" name="old-image" value="<%= Product.image%>">
+                <div class="mb-3 d-grid">
+                  <input type="submit" value="Update Product" class="btn btn-success  btn-lg"/>
+                </div>
+              </form>
+            </div>
+          </div>
+</div>
+<%- include ('layout/footer') %></div>
